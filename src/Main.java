@@ -12,16 +12,16 @@ public class Main{
     public static void hiperGeometrica(){
         Scanner s = new Scanner(System.in);
         int centinela = 1;
-        int numeroTotalDeLaPoblacion, numeroTotalDeExitosDeLaPoblacion;
-        int numeroDeExitosDeLaMuestra, tamañoDeLaMuestra;
+        double numeroTotalDeLaPoblacion, numeroTotalDeExitosDeLaPoblacion;
+        double numeroDeExitosDeLaMuestra, tamañoDeLaMuestra;
 
-        int result1;
 
         System.out.println("--------------------------------------------------------------------");
         System.out.println("Distribucion de probabilidad Hipergeométrica");
         System.out.println("--------------------------------------------------------------------");
 
         do{
+
             System.out.println("Ingrese el número total de la población: ");
             numeroTotalDeLaPoblacion = s.nextInt();
             System.out.println("Ingrese el número total de éxitos de la población: ");
@@ -30,11 +30,9 @@ public class Main{
             numeroDeExitosDeLaMuestra = s.nextInt();
             System.out.println("Ingrese tamaño de la muestra: ");
             tamañoDeLaMuestra = s.nextInt();
-
             System.out.println(numeroTotalDeLaPoblacion + " " + numeroTotalDeExitosDeLaPoblacion + " " + numeroDeExitosDeLaMuestra + " " + tamañoDeLaMuestra);
 
-            result1 = (((combinatorio(numeroTotalDeExitosDeLaPoblacion, numeroDeExitosDeLaMuestra))*(combinatorio((numeroTotalDeLaPoblacion-numeroTotalDeExitosDeLaPoblacion), (tamañoDeLaMuestra-numeroDeExitosDeLaMuestra)))) / (combinatorio(numeroTotalDeLaPoblacion, tamañoDeLaMuestra)));
-
+            double result1 = (((combinatorio(numeroTotalDeExitosDeLaPoblacion,numeroDeExitosDeLaMuestra))*combinatorio((numeroTotalDeLaPoblacion-numeroTotalDeExitosDeLaPoblacion),(tamañoDeLaMuestra-numeroDeExitosDeLaMuestra)))/combinatorio(numeroTotalDeLaPoblacion,tamañoDeLaMuestra));
             System.out.println("Resultado --> " + result1);
 
 
@@ -50,24 +48,15 @@ public class Main{
     }
 
 
-    static int factorial (int numero) {
-        int result;
-
+    public static double factorial (double numero) {
         if (numero==0)
             return 1;
         else
-            result = (numero * factorial(numero-1));
-        return result;
+            return numero * factorial(numero-1);
     }
 
-    static int combinatorio (int a, int b){
-
-        int result;
-
-        result = (factorial(a) / ((factorial(b))*(factorial((a-b)))));
-
-        return result;
-
+    public static double combinatorio (double a, double b){
+        return (factorial(a) / ((factorial(b))*(factorial((a-b)))));
     }
 
 
