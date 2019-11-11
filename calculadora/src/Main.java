@@ -4,7 +4,11 @@ public class Main{
 
 
     public static void main(String[] args) {
+        System.out.println("Ingrese opcion");
 
+    }
+
+    public static void hiperGeometrica(){
         Scanner s = new Scanner(System.in);
         int centinela = 1;
         int numeroTotalDeLaPoblacion, numeroTotalDeExitosDeLaPoblacion;
