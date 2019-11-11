@@ -23,13 +23,13 @@ public class Main{
         do{
 
             System.out.println("Ingrese el número total de la población: ");
-            numeroTotalDeLaPoblacion = s.nextInt();
+            numeroTotalDeLaPoblacion = s.nextDouble();
             System.out.println("Ingrese el número total de éxitos de la población: ");
-            numeroTotalDeExitosDeLaPoblacion = s.nextInt();
+            numeroTotalDeExitosDeLaPoblacion = s.nextDouble();
             System.out.println("Ingrese el número de exitos de la muestra: ");
-            numeroDeExitosDeLaMuestra = s.nextInt();
+            numeroDeExitosDeLaMuestra = s.nextDouble();
             System.out.println("Ingrese tamaño de la muestra: ");
-            tamañoDeLaMuestra = s.nextInt();
+            tamañoDeLaMuestra = s.nextDouble();
             System.out.println(numeroTotalDeLaPoblacion + " " + numeroTotalDeExitosDeLaPoblacion + " " + numeroDeExitosDeLaMuestra + " " + tamañoDeLaMuestra);
 
             double result1 = (((combinatorio(numeroTotalDeExitosDeLaPoblacion,numeroDeExitosDeLaMuestra))*combinatorio((numeroTotalDeLaPoblacion-numeroTotalDeExitosDeLaPoblacion),(tamañoDeLaMuestra-numeroDeExitosDeLaMuestra)))/combinatorio(numeroTotalDeLaPoblacion,tamañoDeLaMuestra));
