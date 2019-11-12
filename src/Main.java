@@ -5,13 +5,40 @@ public class Main{
 
 
     public static void main(String[] args) {
-        System.out.println("Ingrese opcion");
+        Scanner input = new Scanner(System.in);
+        int opcion;
+        do{
+            System.out.println("Ingrese opcion");
+            System.out.println("Ingrese 1 para realizar calculo de Distribucion Binomial");
+            System.out.println("Ingrese 2 para realizar calculo de Distribucion Poisson");
+            System.out.println("Ingrese 3 para realizar calculo de Distribucion Hipergeométrica");
+            opcion = input.nextInt();
+
+            switch(opcion){
+                case 1:
+
+                    break;
+                case 2:
+                    calcularPoisson();
+                    break;
+                case 3: 
+                    calcularHiperGeometrica();
+                    break;
+                default:
+                    break;
+            }
+
+            System.out.println("Ingrese <1> si desea volver a ejercutar");
+            System.out.println("Ingrese <0> si desea salir");
+            opcion = input.nextInt();
+
+        }while(opcion == 1);       
         //Agregar menu para elegir entre Binomial Poisson HiperGeometrica
-        hiperGeometrica();
+        
 
     }
 
-    public static void hiperGeometrica(){
+    public static void calcularHiperGeometrica(){
         Scanner s = new Scanner(System.in);
         int centinela;
         double numeroTotalDeLaPoblacion, numeroTotalDeExitosDeLaPoblacion;
@@ -40,6 +67,18 @@ public class Main{
             centinela = s.nextInt();
         }while(centinela == 1);
         s.close();
+    }
+
+    private static void calcularPoisson(){
+        Scanner input = new Scanner(System.in);
+        System.print.out("Ingrese Lambda");
+        double lambda = input.nextDouble();
+        System.print.out("Ingrese K");
+        int k = input.nextInt();
+
+        System.out.println("El resulado es: "+poisson(k,lambda));
+
+        input.close();
     }
 
 
